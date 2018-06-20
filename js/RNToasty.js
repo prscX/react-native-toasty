@@ -2,6 +2,8 @@ import React, { PureComponent } from "react";
 import { findNodeHandle, ViewPropTypes, NativeModules } from "react-native";
 import PropTypes from "prop-types";
 
+import RNVectorHelper from "./RNVectorHelper";
+
 const { RNToasty } = NativeModules;
 
 class Toasty extends PureComponent {
@@ -15,9 +17,10 @@ class Toasty extends PureComponent {
     titleColor: PropTypes.string,
 
     duration: PropTypes.number,
-
     tintColor: PropTypes.string,
-    withIcon: PropTypes.bool
+
+    withIcon: PropTypes.bool,
+    icon: PropTypes.object
   };
 
   static defaultProps = {
@@ -46,7 +49,7 @@ class Toasty extends PureComponent {
     Error: 4
   }
 
-  static _Show (props) {
+  static Show (props) {
     if (!props) props = {}
     if (props.type === undefined) props.type = Toasty.defaultProps.type;
 
@@ -58,6 +61,17 @@ class Toasty extends PureComponent {
 
     if (props.tintColor === undefined) props.tintColor = Toasty.defaultProps.tintColor;
     if (props.withIcon === undefined) props.withIcon = Toasty.defaultProps.withIcon;
+
+    if (props.withIcon) {
+      if (props.icon && props.icon.props) {
+        let icon = props.icon.props
+
+        let glyph = RNVectorHelper.Resolve(icon.family, icon.name);
+        props.icon = Object.assign({}, icon, { glyph: glyph });
+      }
+    } else {
+      props.icon = undefined
+    }
 
     RNToasty.Show(props)
   }
@@ -72,7 +86,7 @@ class Toasty extends PureComponent {
 
     props.type = Toasty.Types.Success
 
-    Toasty._Show(props);
+    Toasty.Show(props);
   }
 
   static errorStyle = {
@@ -84,7 +98,7 @@ class Toasty extends PureComponent {
 
     props.type = Toasty.Types.Error
 
-    Toasty._Show(props);
+    Toasty.Show(props);
   }
 
   static infoStyle = {
@@ -96,7 +110,7 @@ class Toasty extends PureComponent {
 
     props.type = Toasty.Types.Info
 
-    Toasty._Show(props);
+    Toasty.Show(props);
   }
 
   static warnStyle = {
@@ -108,7 +122,7 @@ class Toasty extends PureComponent {
 
     props.type = Toasty.Types.Warn
 
-    Toasty._Show(props);
+    Toasty.Show(props);
   }
 
   static normalStyle = {
@@ -121,14 +135,14 @@ class Toasty extends PureComponent {
 
     props.type = Toasty.Types.Normal
 
-    Toasty._Show(props);
+    Toasty.Show(props);
   }
 
   componentDidMount() {}
 
   componentDidUpdate() {}
 
-  _show() {}
+  show() {}
 
   render() {
     return null;

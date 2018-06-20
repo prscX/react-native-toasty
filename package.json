@@ -2,7 +2,7 @@
     "name": "react-native-toasty",
     "version": "0.0.0",
     "description": "React Native: Native Toast",
-    "main": "RNToast.js",
+    "main": "js/RNToasty.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
@@ -16,6 +16,7 @@
         "url": "https://github.com/prscX/react-native-toasty.git"
     },
     "dependencies": {
+        "react-native-vector-icons": "4.6.0"
     },
     "devDependencies": {
         "prettier-pack": "0.0.6"

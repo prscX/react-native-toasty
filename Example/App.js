@@ -14,10 +14,13 @@ import {
 } from 'react-native';
 
 import { RNToasty } from 'react-native-toasty'
+import Icon from "react-native-vector-icons/FontAwesome";
 
 type Props = {};
 export default class App extends Component<Props> {
   render() {
+    let copy = <Icon name="copy" size={30} color="#000000" family={"FontAwesome"} />;
+
     return <View style={styles.container}>
         <TouchableOpacity onPress={() => {
             RNToasty.Normal({ title: "Message" });
@@ -25,7 +28,7 @@ export default class App extends Component<Props> {
           <Text>{"Normal"}</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => {
-            RNToasty.Info({ title: "Message", withIcon: false, duration: 1, tintColor: '#000000' });
+            RNToasty.Info({ title: "Message" });
           }}>
           <Text>{"Info"}</Text>
         </TouchableOpacity>
@@ -43,6 +46,11 @@ export default class App extends Component<Props> {
           RNToasty.Error({ title: 'Message' })
         }}>
           <Text>{'Error'}</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => {
+          RNToasty.Show({ title: "Message", titleSize: 24, titleColor: '#555555', withIcon: true, duration: 1, tintColor: '#000000', icon: copy });
+        }}>
+          <Text>{'Custom'}</Text>
         </TouchableOpacity>
       </View>;
   }
