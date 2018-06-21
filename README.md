@@ -19,7 +19,7 @@ This library is a wrapper around native Toast library which 5 different states o
 
 | **Android: [GrenderG/Toasty](https://github.com/GrenderG/Toasty)**             |
 | ----------------- |
-| <img src="https://raw.githubusercontent.com/GrenderG/Toasty/master/art/collage.png" height="600" />                  |
+| <img src="https://raw.githubusercontent.com/GrenderG/Toasty/master/art/collage.png" />                  |
 
 
 | **iOS: [prscX/BottomSheetTextView.iOS](https://github.com/prscX/BottomSheetTextView.iOS)**             |
