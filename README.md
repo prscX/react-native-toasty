@@ -1,7 +1,7 @@
 <h1 align="center">
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/GrenderG/Toasty/master/art/web_hi_res_512.png" />
+  <img src="https://raw.githubusercontent.com/GrenderG/Toasty/master/art/web_hi_res_512.png" width="100" height= "100"/>
 </p>
 
 <p align="center">
