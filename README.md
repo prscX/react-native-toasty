@@ -82,6 +82,42 @@ RNToasty.Show({
 ```
 
 
+## API's
+
+- **Normal**
+
+```javascript
+RNToasty.Normal({})
+```
+
+- **Info**
+
+```javascript
+RNToasty.Info({})
+```
+
+- **Success**
+```javascript
+RNToasty.Success({})
+```
+
+- **Warning**
+
+```javascript
+RNToasty.Warn({})
+```
+
+- **Error**
+
+```javascript
+RNToasty.Error({})
+```
+
+- **Custom**
+
+```javascript
+RNToasty.Show({})
+```
 
 ## Props
 
