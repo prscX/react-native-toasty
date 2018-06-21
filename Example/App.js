@@ -19,7 +19,7 @@ import Icon from "react-native-vector-icons/FontAwesome";
 type Props = {};
 export default class App extends Component<Props> {
   render() {
-    let copy = <Icon name="copy" size={30} color="#000000" family={"FontAwesome"} />;
+    let copy = <Icon name="copy" size={24} color="#FFFFFF" family={"FontAwesome"} />;
 
     return <View style={styles.container}>
         <TouchableOpacity onPress={() => {
@@ -48,7 +48,7 @@ export default class App extends Component<Props> {
           <Text>{'Error'}</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => {
-          RNToasty.Show({ title: "Message", titleSize: 24, titleColor: '#555555', withIcon: true, duration: 1, tintColor: '#000000', icon: copy });
+          RNToasty.Show({ title: "Message", titleSize: 50, titleColor: '#555555', withIcon: true, duration: 1, tintColor: '#000000', icon: copy });
         }}>
           <Text>{'Custom'}</Text>
         </TouchableOpacity>

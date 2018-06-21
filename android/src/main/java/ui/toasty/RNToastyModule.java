@@ -64,8 +64,12 @@ public class RNToastyModule extends ReactContextBaseJavaModule {
       }
     }
 
-    config.setTextColor(Color.parseColor(titleColor));
-    config.setTextSize(titleSize);
+    if (titleColor != null && titleColor.length() > 0) {
+      config.setTextColor(Color.parseColor(titleColor));
+    }
+    if (titleSize != 0) {
+      config.setTextSize(titleSize);
+    }
 
     config.apply(); // required
 
