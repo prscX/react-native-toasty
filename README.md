@@ -77,9 +77,40 @@ import { RNToasty } from 'react-native-toasty'
 
 ```javascript
 RNToasty.Show({
-    title: ''
+    title: 'This is a toast'
 });
 ```
+
+
+
+## Props
+
+- **Props: Generic**
+
+| Prop              | Type       | Default | Note                                                                                                       |
+| ----------------- | ---------- | ------- | ---------------------------------------------------------------------------------------------------------- |
+| `title`       | `string`     |         | Specify the title of toast
+| `titleSize` | `number` |    16     | Specify the title size                                                   |  |
+| `titleColor`    | `string: HEX-COLOR`     |    `#FFFFFF`    | Specify the title color                                        |  |
+| `duration`      | `number`     |         | Specify the duration of toast: `0: SHORT; 1: LONG`
+| `tintColor`      | `string: HEX-NUMBER`     |    `#000000`     | Specify the tint color of toast
+| `withIcon`      | `bool`     |    `true`     | Specify whether you need icon
+| `icon`      | `vector-icon`     |         | Specify icon of toast
+
+
+## Icons
+
+- **RN Vector Icons:** It supports [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons) library. Please find below snippet for the usage:
+
+```javascript
+	let facebook = <Icon family={'FontAwesome'} name={'facebook'} color={'#000000'} size={30} />
+
+	<RNBottomActionSheet.GridView.Item title={"Facebook"} icon={facebook} />
+```
+
+> **Note:**
+> - We have added `family` prop for `Icon` class, please make sure that you pass the props
+
 
 
 ## Credits
