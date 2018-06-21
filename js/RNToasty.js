@@ -90,7 +90,7 @@ class Toasty extends PureComponent {
     icon: (
       <Feather
         name={"check-circle"}
-        size={24}
+        size={22}
         color={"#FFFFFF"}
         family={"Feather"}
       />
@@ -134,7 +134,7 @@ class Toasty extends PureComponent {
   static infoStyle = {
     tintColor: "#5162bc",
     icon: (
-      <Feather name={"info"} size={24} color={"#FFFFFF"} family={"Feather"} />
+      <Feather name={"info"} size={22} color={"#FFFFFF"} family={"Feather"} />
     )
   };
   static Info(props) {
