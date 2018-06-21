@@ -22,7 +22,76 @@ This library is a wrapper around native Toast library which 5 different states o
 | <img src="https://raw.githubusercontent.com/GrenderG/Toasty/master/art/collage.png" />                  |
 
 
-| **iOS: [prscX/BottomSheetTextView.iOS](https://github.com/prscX/BottomSheetTextView.iOS)**             |
+| **iOS: [scalessec/Toast](https://github.com/scalessec/Toast)**             |
 | ----------------- |
 |                 |
 
+
+## Getting Started
+
+`$npm install react-native-toasty`
+
+`$react-native link react-native-toasty`
+
+`$react-native link react-native-vector-icons`
+
+
+- **Android**
+
+    - Please add below script snippet in your app `build.gradle`
+
+```
+buildscript {
+    repositories {
+        jcenter()
+        maven { url "https://maven.google.com" }
+        maven { url "https://jitpack.io" }
+    }
+    ...
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        mavenLocal()
+        maven { url "https://maven.google.com" }
+        maven { url "https://jitpack.io" }
+        ...
+    }
+}
+```
+
+> **Note:** Android SDK 27 > is supported
+
+- **iOS**
+    - Run Command: `cd ../node_modules/react-native-toasty/ios` && `pod install`. If it has error => try pod repo update then pod install
+
+
+## Usage
+
+```javascript
+
+import { RNToasty } from 'react-native-toasty'
+
+```
+
+```javascript
+RNToasty.Show({
+    title: ''
+});
+```
+
+
+## Credits
+- Android: [GrenderG/Toasty](https://github.com/GrenderG/Toasty)
+- iOS: [scalessec/Toast](https://github.com/scalessec/Toast)
+
+
+## Contribution
+Contributions are welcome and are greatly appreciated! Every little bit helps, and credit will always be given.
+
+
+## License
+This library is provided under the Apache 2 License.
+
+RNToasty @ Pranav Raj Singh Chauhan
