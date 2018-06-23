@@ -92,7 +92,7 @@ RNToasty.Show({
 RNToasty.Normal({}), RNToasty.Info({}), RNToasty.Success({}), RNToasty.Warn({}), RNToasty.Error({}), RNToasty.Show({})
 ```
 
-## Props
+## 💡 Props
 
 - **Props: Generic**
 
