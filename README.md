@@ -10,7 +10,9 @@
   <a href="https://github.com/prscX/react-native-toasty#License"><img src="https://img.shields.io/npm/l/react-native-toasty.svg?style=flat" /></a>
 </p>
 
-    React Native: Native Toast
+    ReactNative: Native Toast
+
+If this project has helped you out, please support us with a star 🌟
 </h1>
 
 This library is a wrapper around native Toast library which 5 different states of beautiful toasts:
@@ -27,7 +29,7 @@ This library is a wrapper around native Toast library which 5 different states o
 |                 |
 
 
-## Getting Started
+## 📖 Getting Started
 
 `$npm install react-native-toasty`
 
@@ -67,7 +69,7 @@ allprojects {
     - Run Command: `cd ../node_modules/react-native-toasty/ios` && `pod install`. If it has error => try pod repo update then pod install
 
 
-## Usage
+## 💻 Usage
 
 ```javascript
 
@@ -82,7 +84,7 @@ RNToasty.Show({
 ```
 
 
-## API's
+## 🎨 API's
 
 **Normal**, **Info**, **Success**, **Warning**, **Error**, **Custom**
 
@@ -119,17 +121,36 @@ RNToasty.Normal({}), RNToasty.Info({}), RNToasty.Success({}), RNToasty.Warn({}),
 > - We have added `family` prop for `Icon` class, please make sure that you pass the props
 
 
+## ✨ Credits
 
-## Credits
 - Android: [GrenderG/Toasty](https://github.com/GrenderG/Toasty)
 - iOS: [scalessec/Toast](https://github.com/scalessec/Toast)
 
 
-## Contribution
+## 🤔 How to contribute
+Have an idea? Found a bug? Please raise to [ISSUES](https://github.com/prscX/react-native-toasty/issues).
 Contributions are welcome and are greatly appreciated! Every little bit helps, and credit will always be given.
 
+## 💫 Where is this library used?
+If you are using this library in one of your projects, add it in this list below. ✨
 
-## License
+
+## 📜 License
 This library is provided under the Apache 2 License.
 
-RNToasty @ Pranav Raj Singh Chauhan
+RNToasty @ [prscX](https://github.com/prscX)
+
+## 💖 Support my projects
+I open-source almost everything I can, and I try to reply everyone needing help using these projects. Obviously, this takes time. You can integrate and use these projects in your applications for free! You can even change the source code and redistribute (even resell it).
+
+However, if you get some profit from this or just want to encourage me to continue creating stuff, there are few ways you can do it:
+* Starring and sharing the projects you like 🚀
+* If you're feeling especially charitable, please follow [prscX](https://github.com/prscX) on GitHub.
+
+  <a href="https://www.buymeacoffee.com/prscX" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
+
+  Thanks! ❤️
+  <br/>
+  [prscX.github.io](https://prscx.github.io)
+  <br/>
+  </ Pranav >
