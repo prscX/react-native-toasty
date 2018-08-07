@@ -44,10 +44,10 @@ RCT_EXPORT_METHOD(Show:(NSDictionary *)props) {
 //    }
 
     
-    id<UIApplicationDelegate> app = [[UIApplication sharedApplication] delegate];
+    UIWindow *window = [[UIApplication sharedApplication] keyWindow];
 
     // toast with all possible options
-    [((UINavigationController*) app.window.rootViewController).view makeToast: title
+    [window makeToast: title
         duration:3.0 position: CSToastPositionBottom
        title: nil image: drawable style: style
       completion:^(BOOL didTap) {
