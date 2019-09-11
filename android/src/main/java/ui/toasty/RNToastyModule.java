@@ -89,7 +89,7 @@ public class RNToastyModule extends ReactContextBaseJavaModule {
           break;
       }
     } else {
-      Toasty.custom(getCurrentActivity(), title, iconDrawable, Color.parseColor(tintColor), duration, withIcon, true).show();
+      Toasty.custom(getCurrentActivity(), title, iconDrawable, Color.parseColor(tintColor),Color.parseColor(titleColor), duration, withIcon, true).show();
     }
   }
 
