@@ -1,6 +1,6 @@
 {
     "name": "react-native-toasty",
-    "version": "0.0.5",
+    "version": "1.0.0",
     "description": "React Native: Native Toast",
     "main": "js/RNToasty.js",
     "scripts": {
