@@ -64,9 +64,6 @@ public class RNToastyModule extends ReactContextBaseJavaModule {
       }
     }
 
-    if (titleColor != null && titleColor.length() > 0) {
-      config.setTextColor(Color.parseColor(titleColor));
-    }
     if (titleSize != 0) {
       config.setTextSize(titleSize);
     }
@@ -92,7 +89,7 @@ public class RNToastyModule extends ReactContextBaseJavaModule {
           break;
       }
     } else {
-      Toasty.custom(getCurrentActivity(), title, iconDrawable, Color.parseColor(tintColor), duration, withIcon, true).show();
+      Toasty.custom(getCurrentActivity(), title, iconDrawable, Color.parseColor(tintColor),Color.parseColor(titleColor), duration, withIcon, true).show();
     }
   }
 
