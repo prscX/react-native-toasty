@@ -33,6 +33,39 @@ This library is a wrapper around native Toast library which 5 different states o
 
 `$npm install react-native-toasty`
 
+
+## **RN61 >= RNPE V1 >**
+
+> RN61 above please use `react-native-toasty` V1 and above
+
+- **iOS**
+
+> **iOS Prerequisite:** Please make sure `CocoaPods` is installed on your system
+
+	- Add the following to your `Podfile` -> `ios/Podfile` and run pod update:
+
+
+```
+  use_native_modules!
+
+  pod 'RNToasty', :path => '../node_modules/react-native-toasty/ios'
+
+```
+
+- **Android**
+
+Please add below snippet into your app `build.gradle`
+
+```
+allprojects {
+    repositories {
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
+
+## **RN61 < RNPE V1 <**
+
 `$react-native link react-native-toasty`
 
 `$react-native link react-native-vector-icons`
