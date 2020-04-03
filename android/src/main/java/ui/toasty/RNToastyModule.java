@@ -55,7 +55,9 @@ public class RNToastyModule extends ReactContextBaseJavaModule {
 
     boolean withIcon = props.getBoolean("withIcon");
     ReadableMap icon = props.hasKey("icon") ? props.getMap("icon") : null;
-
+    
+    String fontFamily = props.getString("fontFamily");
+    
     Drawable iconDrawable = null;
 
     if (withIcon) {
@@ -68,6 +70,10 @@ public class RNToastyModule extends ReactContextBaseJavaModule {
       config.setTextSize(titleSize);
     }
 
+    if(fontFamily.length()>0){
+      Typeface typeface = Typeface.createFromAsset(getCurrentActivity().getAssets(),"fonts/" + fontFamily + ".ttf");
+      config.setToastTypeface(typeface);
+    }
     config.apply(); // required
 
     if (tintColor.length() <= 0 && icon == null ) {
