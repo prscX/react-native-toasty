@@ -70,10 +70,11 @@ public class RNToastyModule extends ReactContextBaseJavaModule {
       config.setTextSize(titleSize);
     }
 
-    if(fontFamily.length()>0){
+    if(fontFamily.length() > 0) {
       Typeface typeface = Typeface.createFromAsset(getCurrentActivity().getAssets(),"fonts/" + fontFamily + ".ttf");
       config.setToastTypeface(typeface);
     }
+
     config.apply(); // required
 
     if (tintColor.length() <= 0 && icon == null ) {
