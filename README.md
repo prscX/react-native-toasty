@@ -112,7 +112,8 @@ import { RNToasty } from 'react-native-toasty'
 
 ```javascript
 RNToasty.Show({
-    title: 'This is a toast'
+    title: 'This is a toast',
+    fontFamily: 'Arial'
 });
 ```
 
@@ -138,6 +139,7 @@ RNToasty.Normal({}), RNToasty.Info({}), RNToasty.Success({}), RNToasty.Warn({}),
 | `tintColor`      | `string: HEX-NUMBER`     |    `#000000`     | Specify the tint color of toast
 | `withIcon`      | `bool`     |    `true`     | Specify whether you need icon
 | `icon`      | `vector-icon`     |         | Specify icon of toast
+| `fontFamily`  | `string`|         | Name of font in assets/fonts folder => like 'Arial' [Only on Android]
 
 
 ## Icons
