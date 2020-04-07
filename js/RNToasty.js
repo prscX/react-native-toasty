@@ -58,7 +58,7 @@ class Toasty extends PureComponent {
     if (!props) props = {};
     if (props.type === undefined) props.type = Toasty.defaultProps.type;
     // name of font
-    if(props.fontFamily !== undefined) props.fontFamily;
+    if(props.fontFamily === undefined) props.fontFamily = '';
     if (props.title === undefined) props.title = Toasty.defaultProps.title;
     if (props.titleSize === undefined)
       props.titleSize = Toasty.defaultProps.titleSize;
