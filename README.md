@@ -128,19 +128,19 @@ RNToasty.Normal({}),
 
 - **Props: Generic**
 
-| Prop         | Type                 | Default   | Note                                                                  |
-| ------------ | -------------------- | --------- | --------------------------------------------------------------------- |
-| `title`      | `string`             |           | Specify the title of toast                                            |
-| `titleSize`  | `number`             | 16        | Specify the title size                                                |  |
-| `titleColor` | `string: HEX-COLOR`  | `#FFFFFF` | Specify the title color                                               |  |
-| `duration`   | `number`             |           | Specify the duration of toast: `0: SHORT; 1: LONG`                    |
-| `tintColor`  | `string: HEX-NUMBER` | `#000000` | Specify the tint color of toast                                       |
-| `withIcon`   | `bool`               | `true`    | Specify whether you need icon                                         |
-| `icon`       | `vector-icon`        |           | Specify icon of toast                                                 |
-| `fontFamily` | `string`             |           | Name of font in assets/fonts folder => like 'Arial' [Only on Android] |
-| `position`   | `top|center|bottom`  | `bottom`  | Specify position of toast                                             |
-| `offsetX`    | `number`             | `0`       | Specify X offset of toast [Only on Android]                           |
-| `offsetY`    | `number`             | `0`       | Specify Y offset of toast [Only on Android]                           |
+| Prop         | Type                  | Default   | Note                                                                  |
+| ------------ | --------------------- | --------- | --------------------------------------------------------------------- |
+| `title`      | `string`              |           | Specify the title of toast                                            |
+| `titleSize`  | `number`              | 16        | Specify the title size                                                |  |
+| `titleColor` | `string: HEX-COLOR`   | `#FFFFFF` | Specify the title color                                               |  |
+| `duration`   | `number`              |           | Specify the duration of toast: `0: SHORT; 1: LONG`                    |
+| `tintColor`  | `string: HEX-NUMBER`  | `#000000` | Specify the tint color of toast                                       |
+| `withIcon`   | `bool`                | `true`    | Specify whether you need icon                                         |
+| `icon`       | `vector-icon`         |           | Specify icon of toast                                                 |
+| `fontFamily` | `string`              |           | Name of font in assets/fonts folder => like 'Arial' [Only on Android] |
+| `position`   | `top\|center\|bottom` | `bottom`  | Specify position of toast                                             |
+| `offsetX`    | `number`              | `0`       | Specify X offset of toast [Only on Android]                           |
+| `offsetY`    | `number`              | `0`       | Specify Y offset of toast [Only on Android]                           |
 
 ## Icons
 
