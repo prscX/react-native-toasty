@@ -25,6 +25,8 @@ RCT_EXPORT_METHOD(Show:(NSDictionary *)props) {
     NSDictionary *icon = [props objectForKey: @"icon"];
     UIImage *drawable = nil;
     
+    NSString *position = [props objectForKey: @"position"];
+    
     CSToastStyle *style = [[CSToastStyle alloc] initWithDefaultStyle];
     
     if (icon != nil && [icon count] > 0 && [withIcon intValue] == 1) {
@@ -39,26 +41,40 @@ RCT_EXPORT_METHOD(Show:(NSDictionary *)props) {
     if (titleColor != nil && [titleColor length] > 0) {
         style.titleColor = [RNToasty ColorFromHexCode: titleColor];
     }
-//    if (titleSize != 0) {
-//        style.titleFont = [UIFont systemFontOfSize: [titleSize intValue]];
-//    }
+    if (titleSize != nil && ![titleSize isEqual:@0]) {
+        style.messageFont = [UIFont systemFontOfSize: [titleSize intValue]];
+    }
 
+    const NSString *toastPosition = [self getPosition: position];
     
     UIWindow *window = [[UIApplication sharedApplication] keyWindow];
 
     // toast with all possible options
-    [window makeToast: title
-        duration:3.0 position: CSToastPositionBottom
-       title: nil image: drawable style: style
-      completion:^(BOOL didTap) {
-          if (didTap) {
-              NSLog(@"completion from tap");
-          } else {
-              NSLog(@"completion without tap");
-          }
-      }];
+    [window
+     makeToast: title
+     duration: 3.0
+     position: toastPosition
+     title: nil
+     image: drawable
+     style: style
+     completion:^(BOOL didTap) {
+      if (didTap) {
+          NSLog(@"completion from tap");
+      } else {
+          NSLog(@"completion without tap");
+      }
+    }];
 }
 
+- (const NSString *__strong) getPosition: (NSString *)position {
+    if([position isEqualToString:@"top"]) {
+        return CSToastPositionTop;
+    } else if([position isEqualToString:@"center"]) {
+        return CSToastPositionCenter;
+    } else {
+        return CSToastPositionBottom;
+    }
+}
 
 - (UIImage *) generateVectorIcon: (NSDictionary *) icon {
     NSString *family = [icon objectForKey: @"family"];

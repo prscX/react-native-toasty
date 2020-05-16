@@ -25,7 +25,9 @@ import com.facebook.react.views.text.ReactFontManager;
 import android.os.StrictMode;
 
 import android.graphics.Color;
+import android.view.Gravity;
 import android.widget.Toast;
+
 import es.dmoral.toasty.Toasty;
 
 public class RNToastyModule extends ReactContextBaseJavaModule {
@@ -57,7 +59,11 @@ public class RNToastyModule extends ReactContextBaseJavaModule {
     ReadableMap icon = props.hasKey("icon") ? props.getMap("icon") : null;
     
     String fontFamily = props.getString("fontFamily");
-    
+
+    String position = props.getString("position");
+    int offsetX = props.getInt("offsetX");
+    int offsetY = props.getInt("offsetY");
+
     Drawable iconDrawable = null;
 
     if (withIcon) {
@@ -77,29 +83,47 @@ public class RNToastyModule extends ReactContextBaseJavaModule {
 
     config.apply(); // required
 
+    Toast toast = null;
+
     if (tintColor.length() <= 0 && icon == null ) {
       switch (type) {
         case 0:
-          Toasty.normal(getCurrentActivity(), title, duration).show();
+          toast = Toasty.normal(getCurrentActivity(), title, duration);
           break;
         case 1:
-          Toasty.info(getCurrentActivity(), title, duration, withIcon).show();
+          toast = Toasty.info(getCurrentActivity(), title, duration, withIcon);
           break;
         case 2:
-          Toasty.success(getCurrentActivity(), title, duration, withIcon).show();
+          toast = Toasty.success(getCurrentActivity(), title, duration, withIcon);
           break;
         case 3:
-          Toasty.warning(getCurrentActivity(), title, duration, withIcon).show();
+          toast = Toasty.warning(getCurrentActivity(), title, duration, withIcon);
           break;
         case 4:
-          Toasty.error(getCurrentActivity(), title, duration, withIcon).show();
+          toast = Toasty.error(getCurrentActivity(), title, duration, withIcon);
           break;
       }
     } else {
-      Toasty.custom(getCurrentActivity(), title, iconDrawable, Color.parseColor(tintColor),Color.parseColor(titleColor), duration, withIcon, true).show();
+      toast = Toasty.custom(getCurrentActivity(), title, iconDrawable, Color.parseColor(tintColor), Color.parseColor(titleColor), duration, withIcon, true);
+    }
+
+    if(toast != null) {
+      toast.setGravity(getGravity((position)), offsetX, offsetY);
+      toast.show();
     }
   }
 
+  private int getGravity(String gravity) {
+    switch(gravity) {
+      case "top":
+        return Gravity.TOP;
+      case "center":
+        return Gravity.CENTER;
+      case "bottom":
+      default:
+        return Gravity.BOTTOM;
+    }
+  };
 
   @TargetApi(21)
   private Drawable generateVectorIcon(ReadableMap icon) {
