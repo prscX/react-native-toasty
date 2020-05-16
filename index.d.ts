@@ -1,4 +1,4 @@
-declare module "react-native-toasty" {
+declare module 'react-native-toasty' {
   export interface Options {
     title: string;
     titleSize?: number;
@@ -8,7 +8,7 @@ declare module "react-native-toasty" {
     withIcon?: boolean;
     icon?: Element;
     fontFamily?: string;
-    position?: "top" | "center" | "bottom";
+    position?: 'top' | 'center' | 'bottom';
     /**
      * Android only
      */

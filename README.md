@@ -100,14 +100,14 @@ allprojects {
 ## 💻 Usage
 
 ```javascript
-import { RNToasty } from "react-native-toasty";
+import { RNToasty } from 'react-native-toasty';
 ```
 
 ```javascript
 RNToasty.Show({
-  title: "This is a toast",
-  fontFamily: "Arial",
-  position: "center",
+  title: 'This is a toast',
+  fontFamily: 'Arial',
+  position: 'center',
 });
 ```
 
