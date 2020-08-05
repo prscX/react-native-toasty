@@ -1,12 +1,8 @@
-import React, { PureComponent } from "react";
-import { findNodeHandle, ViewPropTypes, NativeModules, Platform } from "react-native";
-import PropTypes from "prop-types";
-
-import FontAwesome from "react-native-vector-icons/FontAwesome";
-import Feather from "react-native-vector-icons/Feather";
-import EvilIcons from "react-native-vector-icons/EvilIcons";
-
-import RNVectorHelper from "./RNVectorHelper";
+import PropTypes from 'prop-types';
+import React, { PureComponent } from 'react';
+import { NativeModules, Platform, ViewPropTypes } from 'react-native';
+import Feather from 'react-native-vector-icons/Feather';
+import RNVectorHelper from './RNVectorHelper';
 
 const { RNToasty } = NativeModules;
 
@@ -25,25 +21,33 @@ class Toasty extends PureComponent {
 
     withIcon: PropTypes.bool,
     icon: PropTypes.object,
-    fontFamily: PropTypes.string
+    fontFamily: PropTypes.string,
+
+    position: PropTypes.string,
+    offsetX: PropTypes.number,
+    offsetY: PropTypes.number,
   };
 
   static defaultProps = {
     type: 0,
 
-    title: "",
+    title: '',
     titleSize: 0,
-    titleColor: "",
+    titleColor: '',
 
     duration: 0,
 
-    tintColor: "",
-    withIcon: true
+    tintColor: '',
+    withIcon: true,
+
+    position: 'bottom',
+    offsetX: 0,
+    offsetY: 0,
   };
 
   static Duration = {
     Short: 0,
-    Long: 1
+    Long: 1,
   };
 
   static Types = {
@@ -51,14 +55,14 @@ class Toasty extends PureComponent {
     Info: 1,
     Success: 2,
     Warn: 3,
-    Error: 4
+    Error: 4,
   };
 
   static Show(props) {
     if (!props) props = {};
     if (props.type === undefined) props.type = Toasty.defaultProps.type;
     // name of font
-    if(props.fontFamily === undefined) props.fontFamily = '';
+    if (props.fontFamily === undefined) props.fontFamily = '';
     if (props.title === undefined) props.title = Toasty.defaultProps.title;
     if (props.titleSize === undefined)
       props.titleSize = Toasty.defaultProps.titleSize;
@@ -84,25 +88,34 @@ class Toasty extends PureComponent {
       props.icon = undefined;
     }
 
+    if (props.position === undefined)
+      props.position = Toasty.defaultProps.position;
+
+    if (props.offsetX === undefined)
+      props.offsetX = Toasty.defaultProps.offsetX;
+
+    if (props.offsetY === undefined)
+      props.offsetY = Toasty.defaultProps.offsetY;
+
     RNToasty.Show(props);
   }
 
   static successStyle = {
-    tintColor: "#4b994f",
+    tintColor: '#4b994f',
     icon: (
       <Feather
-        name={"check-circle"}
+        name={'check-circle'}
         size={22}
-        color={"#FFFFFF"}
-        family={"Feather"}
+        color={'#FFFFFF'}
+        family={'Feather'}
       />
-    )
+    ),
   };
   static Success(props) {
     if (!props) props = {};
-    if (props.tintColor === undefined && Platform.OS === "ios")
+    if (props.tintColor === undefined && Platform.OS === 'ios')
       props.tintColor = Toasty.successStyle.tintColor;
-    if (props.icon === undefined && Platform.OS === "ios")
+    if (props.icon === undefined && Platform.OS === 'ios')
       props.icon = Toasty.successStyle.icon;
 
     props.type = Toasty.Types.Success;
@@ -111,21 +124,21 @@ class Toasty extends PureComponent {
   }
 
   static errorStyle = {
-    tintColor: "#d81919",
+    tintColor: '#d81919',
     icon: (
       <Feather
-        name={"x-circle"}
+        name={'x-circle'}
         size={22}
-        color={"#FFFFFF"}
-        family={"Feather"}
+        color={'#FFFFFF'}
+        family={'Feather'}
       />
-    )
+    ),
   };
   static Error(props) {
     if (!props) props = {};
-    if (props.tintColor === undefined && Platform.OS === "ios")
+    if (props.tintColor === undefined && Platform.OS === 'ios')
       props.tintColor = Toasty.errorStyle.tintColor;
-    if (props.icon === undefined && Platform.OS === "ios")
+    if (props.icon === undefined && Platform.OS === 'ios')
       props.icon = Toasty.errorStyle.icon;
 
     props.type = Toasty.Types.Error;
@@ -134,16 +147,16 @@ class Toasty extends PureComponent {
   }
 
   static infoStyle = {
-    tintColor: "#5162bc",
+    tintColor: '#5162bc',
     icon: (
-      <Feather name={"info"} size={22} color={"#FFFFFF"} family={"Feather"} />
-    )
+      <Feather name={'info'} size={22} color={'#FFFFFF'} family={'Feather'} />
+    ),
   };
   static Info(props) {
     if (!props) props = {};
-    if (props.tintColor === undefined && Platform.OS === "ios")
+    if (props.tintColor === undefined && Platform.OS === 'ios')
       props.tintColor = Toasty.infoStyle.tintColor;
-    if (props.icon === undefined && Platform.OS === "ios")
+    if (props.icon === undefined && Platform.OS === 'ios')
       props.icon = Toasty.infoStyle.icon;
 
     props.type = Toasty.Types.Info;
@@ -152,21 +165,21 @@ class Toasty extends PureComponent {
   }
 
   static warnStyle = {
-    tintColor: "#feb119",
+    tintColor: '#feb119',
     icon: (
       <Feather
-        name={"minus-circle"}
+        name={'minus-circle'}
         size={22}
-        color={"#FFFFFF"}
-        family={"Feather"}
+        color={'#FFFFFF'}
+        family={'Feather'}
       />
-    )
+    ),
   };
   static Warn(props) {
     if (!props) props = {};
-    if (props.tintColor === undefined && Platform.OS === "ios")
+    if (props.tintColor === undefined && Platform.OS === 'ios')
       props.tintColor = Toasty.warnStyle.tintColor;
-    if (props.icon === undefined && Platform.OS === "ios")
+    if (props.icon === undefined && Platform.OS === 'ios')
       props.icon = Toasty.warnStyle.icon;
 
     props.type = Toasty.Types.Warn;
@@ -175,11 +188,11 @@ class Toasty extends PureComponent {
   }
 
   static normalStyle = {
-    tintColor: "#484d51"
+    tintColor: '#484d51',
   };
   static Normal(props) {
     if (!props) props = {};
-    if (props.tintColor === undefined && Platform.OS === "ios")
+    if (props.tintColor === undefined && Platform.OS === 'ios')
       props.tintColor = Toasty.normalStyle.tintColor;
 
     props.type = Toasty.Types.Normal;
@@ -197,6 +210,5 @@ class Toasty extends PureComponent {
     return null;
   }
 }
-
 
 export { Toasty as RNToasty };
