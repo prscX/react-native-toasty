@@ -33,7 +33,7 @@ class Toasty extends PureComponent {
 
     title: '',
     titleSize: 0,
-    titleColor: '',
+    titleColor: '#ffffff',
 
     duration: 0,
 
