@@ -45,6 +45,10 @@ RCT_EXPORT_METHOD(Show:(NSDictionary *)props) {
         style.messageFont = [UIFont systemFontOfSize: [titleSize intValue]];
     }
 
+    if(duration != nil) {
+           duration = duration.intValue == 0 ? [NSNumber numberWithFloat:1.0] : [NSNumber numberWithFloat:3.0];
+    }
+    
     const NSString *toastPosition = [self getPosition: position];
     
     UIWindow *window = [[UIApplication sharedApplication] keyWindow];
@@ -52,7 +56,7 @@ RCT_EXPORT_METHOD(Show:(NSDictionary *)props) {
     // toast with all possible options
     [window
      makeToast: title
-     duration: 3.0
+     duration: duration.floatValue
      position: toastPosition
      title: nil
      image: drawable
