@@ -30,24 +30,17 @@ This library is a wrapper around native Toast library which 5 different states o
 
 ## 📖 Getting Started
 
-`$npm install react-native-toasty`
+`$yarn install react-native-toasty`
 
-## **RN61 >= RNPE V1 >**
+> This library is supports React Native 60 and above
 
-> RN61 above please use `react-native-toasty` V1 and above
+- Add `react-native-image-helper` your app package.json
 
-- **iOS**
+`$ npm install react-native-image-helper --save`
 
-> **iOS Prerequisite:** Please make sure `CocoaPods` is installed on your system
+- Add `react-native-vector-icons` to your app package.json and configure it as per their installation steps
 
-    - Add the following to your `Podfile` -> `ios/Podfile` and run pod update:
-
-```
-  use_native_modules!
-
-  pod 'RNToasty', :path => '../node_modules/react-native-toasty/ios'
-
-```
+`$ npm install react-native-vector-icons --save`
 
 - **Android**
 
@@ -56,51 +49,15 @@ Please add below snippet into your app `build.gradle`
 ```
 allprojects {
     repositories {
-        maven { url 'https://jitpack.io' }
+        maven { url 'https://www.jitpack.io' }
     }
 }
 ```
-
-## **RN61 < RNPE V1 <**
-
-`$react-native link react-native-toasty`
-
-`$react-native link react-native-vector-icons`
-
-- **Android**
-
-  - Please add below script snippet in your app `build.gradle`
-
-```
-buildscript {
-    repositories {
-        jcenter()
-        maven { url "https://maven.google.com" }
-        maven { url "https://jitpack.io" }
-    }
-    ...
-}
-
-allprojects {
-    repositories {
-        jcenter()
-        mavenLocal()
-        maven { url "https://maven.google.com" }
-        maven { url "https://jitpack.io" }
-        ...
-    }
-}
-```
-
-> **Note:** Android SDK 27 > is supported
-
-- **iOS**
-  - After `react-native link react-native-toasty`, please verify `node_modules/react-native-toasty/ios/` contains `Pods` folder. If does not exist please execute `pod install` command on `node_modules/react-native-toasty/ios/`, if any error => try `pod repo update` then `pod install`
 
 ## 💻 Usage
 
 ```javascript
-import { RNToasty } from 'react-native-toasty';
+import { RNToasty } from 'react-native-toasty'
 ```
 
 ```javascript
@@ -108,7 +65,7 @@ RNToasty.Show({
   title: 'This is a toast',
   fontFamily: 'Arial',
   position: 'center',
-});
+})
 ```
 
 ## 🎨 API's
@@ -121,7 +78,7 @@ RNToasty.Normal({}),
   RNToasty.Success({}),
   RNToasty.Warn({}),
   RNToasty.Error({}),
-  RNToasty.Show({});
+  RNToasty.Show({})
 ```
 
 ## 💡 Props
@@ -129,10 +86,10 @@ RNToasty.Normal({}),
 - **Props: Generic**
 
 | Prop         | Type                  | Default   | Note                                                                  |
-| ------------ | --------------------- | --------- | --------------------------------------------------------------------- |
+| ------------ | --------------------- | --------- | --------------------------------------------------------------------- | --- |
 | `title`      | `string`              |           | Specify the title of toast                                            |
-| `titleSize`  | `number`              | 16        | Specify the title size                                                |  |
-| `titleColor` | `string: HEX-COLOR`   | `#FFFFFF` | Specify the title color                                               |  |
+| `titleSize`  | `number`              | 16        | Specify the title size                                                |     |
+| `titleColor` | `string: HEX-COLOR`   | `#FFFFFF` | Specify the title color                                               |     |
 | `duration`   | `number`              |           | Specify the duration of toast: `0: SHORT; 1: LONG`                    |
 | `tintColor`  | `string: HEX-NUMBER`  | `#000000` | Specify the tint color of toast                                       |
 | `withIcon`   | `bool`                | `true`    | Specify whether you need icon                                         |

@@ -17,7 +17,8 @@ Pod::Spec.new do |s|
 
   s.preserve_paths         = 'LICENSE', 'package.json'
   s.source_files           = '**/*.{h,m}'
-  s.dependency             'React'
+  s.dependency             'React-Core'
+  s.dependency              'RNImageHelper'
   s.dependency             'Toast', '~> 4.0.0'
 
 end

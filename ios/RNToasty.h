@@ -6,6 +6,7 @@
 #endif
 
 #import "UIView+Toast.h"
+#import "RNImageHelper.h"
 
 @interface RNToasty : NSObject <RCTBridgeModule>
 
